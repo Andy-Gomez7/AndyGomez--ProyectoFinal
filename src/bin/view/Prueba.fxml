@@ -5,7 +5,6 @@
 
 <AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#volar" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controller">
    <children>
-      <Rectangle fx:id="bird" arcHeight="5.0" arcWidth="5.0" fill="#fff01f" height="41.0" layoutX="134.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-      <AnchorPane layoutX="200.0" layoutY="39.0" prefHeight="200.0" prefWidth="279.0" />
+      <Rectangle fx:id="bird" arcHeight="5.0" arcWidth="5.0" fill="#fff01f" height="41.0" layoutX="121.0" layoutY="135.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
    </children>
 </AnchorPane>
