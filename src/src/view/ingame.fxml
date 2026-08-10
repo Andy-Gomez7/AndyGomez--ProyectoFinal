@@ -33,15 +33,5 @@
             <Font name="Agency FB" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="contadorMonedas" alignment="CENTER" layoutX="296.0" layoutY="14.0" prefHeight="43.0" prefWidth="30.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="0" textFill="#e1e1e1">
-         <font>
-            <Font name="Agency FB" size="35.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="imgMoneda" fitHeight="32.0" fitWidth="45.0" layoutX="266.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/moneda.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

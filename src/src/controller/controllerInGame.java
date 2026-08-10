@@ -23,15 +23,9 @@ public class controllerInGame {
 
     @FXML
     private ImageView tutorial;
-    
-    @FXML
-    private Label contadorMonedas;
 
     @FXML
     private Label contadorPuntos;
-    
-    @FXML
-    private ImageView imgMoneda;
     
     AnimationTimer animacion;
 
@@ -48,8 +42,6 @@ public class controllerInGame {
     private double aceleracion = 0.5;
 
     private static int puntuacion = 0;
-
-    private static int monedas = 0;
 
     ArrayList<ImageView> tuberias;
 
@@ -77,8 +69,6 @@ public class controllerInGame {
                         tuberias.addAll(obstaculos.crearTuberia());
 
                         contadorPuntos.toFront();
-                        contadorMonedas.toFront();
-                        imgMoneda.toFront();
 
                         UltmActuTuberia = tiempo;
                     }
@@ -107,8 +97,11 @@ public class controllerInGame {
         return puntuacion;
     }
 
-    public int getMonedas(){
-        return monedas;
+    public static void setPuntuacion(int Puntuacion){
+        
+        if(Puntuacion >=0){
+            puntuacion = Puntuacion;
+        }
     }
 
     @FXML
@@ -185,10 +178,7 @@ public class controllerInGame {
         if(bird.getLayoutX() >= tuberias.get(0).getLayoutX() + tuberias.get(0).getFitWidth()){
             puntuacion++;
             contadorPuntos.setText(Integer.toString(puntuacion));
-            contadorMonedas.setText(Integer.toString(puntuacion));
             contadorPuntos.toFront();
-            contadorMonedas.toFront();
-            imgMoneda.toFront();
             System.out.print(puntuacion+"\n");
 
             puntuadas.add(tuberias.get(0));

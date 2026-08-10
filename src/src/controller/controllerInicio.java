@@ -18,9 +18,6 @@ public class controllerInicio {
     private Button play;
 
     @FXML
-    private Button tienda;
-
-    @FXML
     private Button salir;
 
     public void initialize(){
@@ -31,10 +28,6 @@ public class controllerInicio {
         Image imgPlay = new Image("/img/botonPlay.png");
         ImageView imgVPlay = new ImageView(imgPlay);
         play.setGraphic(imgVPlay);
-        
-        Image imgTienda = new Image("/img/botonTienda.png");
-        ImageView imgVTienda = new ImageView(imgTienda);
-        tienda.setGraphic(imgVTienda);
 
         Image imgSalir = new Image("/img/botonSalir.png");
         ImageView imgVSalir = new ImageView(imgSalir);
@@ -44,11 +37,6 @@ public class controllerInicio {
     public void play(Event event){
         NavegacionUtil nav = new NavegacionUtil();
         nav.Navegacion(anchorpane, "/view/inGame.fxml");
-    }
-
-    public void tienda(Event event){
-        NavegacionUtil nav = new NavegacionUtil();
-        nav.Navegacion(anchorpane, "/view/tienda.fxml");
     }
 
     public void volver(Event event){

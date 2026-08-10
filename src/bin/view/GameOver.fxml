@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerGameOver">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerGameOver">
    <children>
       <ImageView fitHeight="600.0" fitWidth="326.0" pickOnBounds="true">
          <image>
@@ -19,16 +20,26 @@
             <Image url="@../img/gameover.png" />
          </image>
       </ImageView>
-      <Label fx:id="lbPuntajeObtenido" layoutX="-1.0" layoutY="111.0" prefHeight="71.0" prefWidth="332.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="   Puntaje:  " textFill="#e1e1e1">
+      <Label fx:id="lbPuntajeObtenido" layoutX="-1.0" layoutY="73.0" prefHeight="71.0" prefWidth="332.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="   Puntaje:  " textFill="#e1e1e1">
          <font>
             <Font name="Agency FB" size="35.0" />
          </font>
       </Label>
-      <ListView fx:id="LVranking" layoutX="11.0" layoutY="278.0" prefHeight="299.0" prefWidth="307.0" />
-      <Label alignment="CENTER" layoutX="-1.0" layoutY="207.0" prefHeight="71.0" prefWidth="332.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="Ranking" textFill="#e1e1e1">
+      <ListView fx:id="LVranking" layoutX="10.0" layoutY="215.0" prefHeight="299.0" prefWidth="307.0" />
+      <Label alignment="CENTER" layoutX="-3.0" layoutY="144.0" prefHeight="71.0" prefWidth="332.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="Ranking" textFill="#e1e1e1">
          <font>
             <Font name="Agency FB" size="35.0" />
          </font>
       </Label>
+      <Button fx:id="btnReiniciar" layoutX="14.0" layoutY="536.0" mnemonicParsing="false" onAction="#btnRestart" prefHeight="44.0" prefWidth="120.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="Reiniciar">
+         <font>
+            <Font name="Agency FB" size="26.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnInicio" layoutX="192.0" layoutY="536.0" mnemonicParsing="false" onAction="#btnInicio" prefHeight="44.0" prefWidth="120.0" style="-fx-font-weight: bold; -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);" text="Inicio">
+         <font>
+            <Font name="Agency FB" size="26.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

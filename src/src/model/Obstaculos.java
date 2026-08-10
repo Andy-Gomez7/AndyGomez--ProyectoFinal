@@ -64,7 +64,7 @@ public class Obstaculos {
 
     public ArrayList<ImageView> crearTuberia(){
         int espacio = 230;
-        int altoSup =(int)(random.nextInt( 90, 260));
+        int altoSup =(int)(random.nextInt( 50, 351));
         int altoInf = (int)paneLargo - altoSup - espacio;
         int PosX = (int)paneAncho;
 
