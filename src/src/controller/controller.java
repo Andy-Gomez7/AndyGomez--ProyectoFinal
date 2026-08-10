@@ -12,7 +12,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-//import javafx.scene.shape.Rectangle;
 
 public class controller {
 
@@ -39,13 +38,19 @@ public class controller {
 
     private double aceleracion = 0.5;
 
+    private int puntuacion = 0;
+
     ArrayList<ImageView> tuberias;
+
+    ArrayList<ImageView> puntuadas;
 
     Random random = new Random();
 
     public void initialize(){
         
         tuberias = new ArrayList<>();
+
+        puntuadas = new ArrayList<>();
 
         animacion = new AnimationTimer() {
 
@@ -71,6 +76,7 @@ public class controller {
                     }
 
                     simularTuberias(tuberias);
+                    Puntiacion(tuberias);
 
                     UltmActu = tiempo;
                 }
@@ -104,7 +110,12 @@ public class controller {
     }
 
     public Boolean verificarGameOver(ArrayList<ImageView> tuberias){
-        return verificarLimites() || verificarTuberias(tuberias);
+        if(tuberias == null || tuberias.isEmpty()){
+            return false;
+        } else{
+            return verificarLimites() || verificarTuberias(tuberias);    
+        }
+        
     }
 
     public Boolean verificarLimites(){
@@ -150,12 +161,11 @@ public class controller {
 
     private ArrayList<ImageView> crearTuberia(){
         int espacio = 230;
-        //int ancho = 70;
         int altoSup =(int)(random.nextInt( 90, 260));
         int altoInf = (int)paneLargo - altoSup - espacio;
         int PosX = (int)paneAncho;
 
-        Image imgTuberia = new Image(getClass().getResource("/img/pipe-green.png").toExternalForm());
+        Image imgTuberia = new Image("/img/pipe-green.png");
 
         ImageView tuberiaSup = new ImageView(imgTuberia);
         tuberiaSup.setLayoutX(PosX);
@@ -193,6 +203,32 @@ public class controller {
             tutorial.setVisible(false);
         });
 
+     
         fade.play();
     }
+
+    public void Puntiacion(ArrayList<ImageView> tuberias){
+        if(tuberias == null || tuberias.isEmpty()){
+            return;
+        }
+
+        if(!puntuadas.isEmpty()){
+            for(ImageView puntuada : puntuadas){
+                if(tuberias.get(0).equals(puntuada)){
+                    return;
+                }
+            }
+            
+        }
+
+        if(bird.getLayoutX() >= tuberias.get(0).getLayoutX() + tuberias.get(0).getFitWidth()){
+            puntuacion++;
+            System.out.print(puntuacion+"\n");
+
+            puntuadas.add(tuberias.get(0));
+        }   
+    }
+
+    public void formato 
+
 }
