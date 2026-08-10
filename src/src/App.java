@@ -13,7 +13,6 @@ public class App extends Application{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/inicio.fxml"));
 
         Scene scene = new Scene(loader.load());
-        scene.getRoot().requestFocus();
         PrimaryStage.setTitle("Flappy Bird");
         PrimaryStage.setScene(scene);
         PrimaryStage.show();

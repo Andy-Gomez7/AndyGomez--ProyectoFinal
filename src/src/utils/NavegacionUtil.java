@@ -9,19 +9,21 @@ import javafx.stage.Stage;
 
 public class NavegacionUtil {
     
-    public void Navegacion(AnchorPane anchorpane){
+    public void Navegacion(AnchorPane anchorpane, String url){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/inGame.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(url));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) anchorpane.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
+            root.requestFocus();
 
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
         
         
     }
 }
+    

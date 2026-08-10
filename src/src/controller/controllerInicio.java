@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,9 +21,6 @@ public class controllerInicio {
     private Button tienda;
 
     @FXML
-    private Button logros;
-
-    @FXML
     private Button salir;
 
     public void initialize(){
@@ -38,10 +36,6 @@ public class controllerInicio {
         ImageView imgVTienda = new ImageView(imgTienda);
         tienda.setGraphic(imgVTienda);
 
-        Image imgLogros = new Image("/img/botonLogros.png");
-        ImageView imgVLogros = new ImageView(imgLogros);
-        logros.setGraphic(imgVLogros);
-
         Image imgSalir = new Image("/img/botonSalir.png");
         ImageView imgVSalir = new ImageView(imgSalir);
         salir.setGraphic(imgVSalir);
@@ -49,6 +43,20 @@ public class controllerInicio {
 
     public void play(Event event){
         NavegacionUtil nav = new NavegacionUtil();
-        nav.Navegacion(anchorpane);
+        nav.Navegacion(anchorpane, "/view/inGame.fxml");
+    }
+
+    public void tienda(Event event){
+        NavegacionUtil nav = new NavegacionUtil();
+        nav.Navegacion(anchorpane, "/view/tienda.fxml");
+    }
+
+    public void volver(Event event){
+        NavegacionUtil nav = new NavegacionUtil();
+        nav.Navegacion(anchorpane, "/view/inicio.fxml");
+    }
+
+    public void salir(Event event){
+        Platform.exit();
     }
 }

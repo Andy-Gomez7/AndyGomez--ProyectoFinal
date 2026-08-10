@@ -2,22 +2,22 @@ package model;
 
 public class Jugador {
     
-    private int record;
+    private String skin;
     private int monedas;
     private String poder;
 
-    public Jugador(int record, int monedas, String poder){
-        setRecord(record);
+    public Jugador(String skin, int monedas, String poder){
+        setSkin(skin);
         setMonedas(monedas);
         setPoder(poder);
     }
 
-    public void setRecord(int Record){
-        record = Record;
+    public void setSkin(String Skin){
+        skin = Skin;
     }
 
-    public int getRecord(){
-        return record;
+    public String getSkin(){
+        return skin;
     }
 
     public void setMonedas(int Monedas){
