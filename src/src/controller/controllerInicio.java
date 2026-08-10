@@ -1,12 +1,18 @@
 package controller;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import utils.NavegacionUtil;
 
 public class controllerInicio {
     
+    @FXML
+    private AnchorPane anchorpane;
+
     @FXML
     private Button play;
 
@@ -40,4 +46,9 @@ public class controllerInicio {
         ImageView imgVSalir = new ImageView(imgSalir);
         salir.setGraphic(imgVSalir);
     } 
+
+    public void play(Event event){
+        NavegacionUtil nav = new NavegacionUtil();
+        nav.Navegacion(anchorpane);
+    }
 }
