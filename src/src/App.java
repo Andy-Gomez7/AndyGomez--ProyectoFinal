@@ -10,7 +10,7 @@ public class App extends Application{
 
     @Override
     public void start(Stage PrimaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/inGame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/inicio.fxml"));
 
         Scene scene = new Scene(loader.load());
         scene.getRoot().requestFocus();

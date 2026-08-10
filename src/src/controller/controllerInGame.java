@@ -6,6 +6,7 @@ import java.util.Random;
 import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -13,7 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class controller {
+public class controllerInGame {
 
     @FXML
     private AnchorPane anchorpane;
@@ -23,6 +24,15 @@ public class controller {
 
     @FXML
     private ImageView tutorial;
+    
+    @FXML
+    private Label contadorMonedas;
+
+    @FXML
+    private Label contadorPuntos;
+    
+    @FXML
+    private ImageView imgMoneda;
     
     AnimationTimer animacion;
 
@@ -40,6 +50,8 @@ public class controller {
 
     private int puntuacion = 0;
 
+    private int monedas = 0;
+
     ArrayList<ImageView> tuberias;
 
     ArrayList<ImageView> puntuadas;
@@ -47,7 +59,7 @@ public class controller {
     Random random = new Random();
 
     public void initialize(){
-        
+
         tuberias = new ArrayList<>();
 
         puntuadas = new ArrayList<>();
@@ -63,6 +75,10 @@ public class controller {
                         efectoDesvanecido();
 
                         tuberias.addAll(crearTuberia());
+
+                        contadorPuntos.toFront();
+                        contadorMonedas.toFront();
+                        imgMoneda.toFront();
 
                         UltmActuTuberia = tiempo;
                     }
@@ -103,7 +119,7 @@ public class controller {
         if(verificarGameOver(tuberias)){
             GameOver();
         }else{
-            moverBird(-40);
+            moverBird(-35);
             aceleracion = 0;
             
         }
@@ -223,12 +239,14 @@ public class controller {
 
         if(bird.getLayoutX() >= tuberias.get(0).getLayoutX() + tuberias.get(0).getFitWidth()){
             puntuacion++;
+            contadorPuntos.setText(Integer.toString(puntuacion));
+            contadorMonedas.setText(Integer.toString(puntuacion));
+            contadorPuntos.toFront();
+            contadorMonedas.toFront();
+            imgMoneda.toFront();
             System.out.print(puntuacion+"\n");
 
             puntuadas.add(tuberias.get(0));
         }   
     }
-
-    public void formato 
-
 }
